@@ -1,0 +1,22 @@
+#gallery {
+    display: flex;
+    align-items: center;
+}
+li {
+    list-style-type: none;
+}
+
+img {
+    width: 300px;
+    margin-right: 30px;
+    opacity: 80%;
+} 
+
+img:hover {
+    opacity: 100%;
+    transform: scale(1.1)
+}
+
+ul#ingredients li {
+    padding-left: 40px;
+}
