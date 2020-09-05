@@ -4,21 +4,19 @@
 
 const element = document.querySelector("#name-output");
 const userInput = document.querySelector("#name-input");
+const defaultValue = "Незнакомец";
+  
 
-const page = {
-    defaultValue: "Незнакомец",
-
-    updateView(e) {
-        if (e.target.value === "") {
-            element.textContent = this.defaultValue;
-        }
-        else {
-            element.textContent = e.target.value;
-        }
+const insertText =  (e) => {
+    if (e.target.value === "") {
+        element.textContent = defaultValue;
+    }
+    else {
+        element.textContent = e.target.value;
     }
 };
 
-element.textContent = page.defaultValue;
-userInput.addEventListener("input", page.updateView.bind(page));
+element.textContent = defaultValue;
+userInput.addEventListener("input", insertText);
 
 

@@ -29,14 +29,16 @@ const destroyBoxes = () => {
 };
 
 const createBoxes = () => {
+    let divs = [];
     for (let i = 0; i < input.value; i++) {
         const div = document.createElement("div");
         const divSize = 30 + (i * 10);
         div.style.width = `${divSize}px`;
         div.style.height = `${divSize}px`;
         div.style.backgroundColor = random_bg_color();
-        boxes.append(div);
+        divs.push(div)
     }
+    boxes.append(...divs);
 };
 
 

@@ -6,16 +6,14 @@
 // Для добавления стилей, используй CSS - классы valid и invalid.
 
 const element = document.querySelector("#validation-input");
-const maxSymbols = Number(element.getAttribute("data-length"));
+const maxSymbols = Number(element.dataset.length);
 
 
 const checkSymbolsAmount = (e) => {
     if (e.target.value.length !== maxSymbols) {
         element.classList.remove("valid");
         element.classList.add("invalid");
-    }
-
-    if (e.target.value.length === maxSymbols) {
+    } else {
         element.classList.remove("invalid");
         element.classList.add("valid");
     }

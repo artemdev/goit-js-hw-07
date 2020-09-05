@@ -1,30 +1,26 @@
-// Счетчик состоит из спана и кнопок, которые должны увеличивать и уменьшать значение счетчика на 1.
+// // Счетчик состоит из спана и кнопок, которые должны увеличивать и уменьшать значение счетчика на 1.
 
-// Создай переменную counterValue в которой будет хранится текущее значение счетчика.
-// Создай функции increment и decrement для увеличения и уменьшения значения счетчика
-// Добавь слушатели кликов на кнопки, вызовы функций и обновление интерфейса
+// // Создай переменную counterValue в которой будет хранится текущее значение счетчика.
+// // Создай функции increment и decrement для увеличения и уменьшения значения счетчика
+// // Добавь слушатели кликов на кнопки, вызовы функций и обновление интерфейса
 
-const updateValue = {
-    value: Number(document.querySelector('#value').textContent),
-    increment() {
-        this.value += 1;
-        document.querySelector('#value').textContent = this.value;
-        this.writeResult();
-    },
-    decrement() {
-        this.value > 0 ? this.value -= 1 : this.value = 0;
-        this.writeResult();
-    },
-    writeResult() {
-        document.querySelector('#value').textContent = this.value;
-    }
-};
 
+    
+    //ВОПРОС как можно currentValue запомнить и использовать в двух функциях?
+    const decrement = (e) => {
+        const currentValue = parseInt(document.querySelector('#value').textContent);
+        document.querySelector('#value').textContent =  (currentValue > 0 ? currentValue - 1 :  0);
+    };
+
+    const increment = (e) => {
+        const currentValue = parseInt(document.querySelector('#value').textContent);
+        document.querySelector('#value').textContent =  (currentValue + 1)
+    };
 
 const incrementBtn = document.querySelector('button[data-action="increment"]');
 const decrementBtn = document.querySelector('button[data-action="decrement"]');
 
+incrementBtn.addEventListener("click", increment);
+decrementBtn.addEventListener("click", decrement);
 
-incrementBtn.addEventListener("click", updateValue.increment.bind(updateValue));
-decrementBtn.addEventListener("click", updateValue.decrement.bind(updateValue));
 

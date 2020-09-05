@@ -31,10 +31,10 @@ let gallery = document.querySelector('#gallery');
 const imagesNodes = images.reduce((acc, element) => {
     // console.log(element);
     const $li = document.createElement('li');
-    let image = document.createElement('img');
+    const image = document.createElement('img');
     image.setAttribute('src', element.url);
     image.setAttribute('alt', element.alt);
-    $li.insertAdjacentHTML('afterbegin', image.outerHTML);
+    $li.append(image);
     acc.push($li);
     return acc;
 }, []);
