@@ -7,14 +7,17 @@
 
     
     //ВОПРОС как можно currentValue запомнить и использовать в двух функциях?
+    
+
+
+    const currentValue = () => parseInt(document.querySelector('#value').textContent);
+
     const decrement = (e) => {
-        const currentValue = parseInt(document.querySelector('#value').textContent);
-        document.querySelector('#value').textContent =  (currentValue > 0 ? currentValue - 1 :  0);
+        document.querySelector('#value').textContent =  (currentValue() > 0 ? currentValue() - 1 :  0);
     };
 
     const increment = (e) => {
-        const currentValue = parseInt(document.querySelector('#value').textContent);
-        document.querySelector('#value').textContent =  (currentValue + 1)
+        document.querySelector('#value').textContent =  (currentValue() + 1)
     };
 
 const incrementBtn = document.querySelector('button[data-action="increment"]');
